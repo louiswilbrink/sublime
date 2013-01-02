@@ -1,0 +1,22 @@
+# config/schema.yml
+propel:
+
+  problem:
+    id:           { phpName: Id, type: INTEGER, size: 11, primaryKey: true, autoIncrement: true, required: true }
+    title:        { phpName: Title, type: VARCHAR, size: 255, required: true }
+    description:  { phpName: Description, type: LONGVARCHAR, required: true }
+    is_active:    { phpName: IsActive, type: INTEGER, size: 1, required: true, defaultValue: 1 }
+
+  solution:
+    id:           { phpName: Id, type: INTEGER, size: 11, primaryKey: true, autoIncrement: true, required: true }
+    problem_id:   { phpName: ProblemId, type: INTEGER, size: 11, required: true }
+    step:         { phpName: Step, type: INTEGER, size: 4, required: true }
+    instruction:  { phpName: Instruction, type: LONGVARCHAR, required: true }
+    instruction_type_id:   { phpName: InstructionTypeId, type: INTEGER, size: 4, required: true, defaultValue: 10 }
+
+  instruction_type:
+    id:           { phpName: Id, type: INTEGER, size: 11, primaryKey: true, autoIncrement: true, required: true }
+    name:         { phpName: Name, type: VARCHAR, size: 255, required: true }
+    style_class:  { phpName: StyleClass, type: VARCHAR, size: 255, required: true }
+
+

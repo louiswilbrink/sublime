@@ -1,0 +1,15 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: home, action: index }
+
+enter_solution:
+  url:   /enter_solution/:id
+  param: { module: home, action: solution }
+
+enter_problem:
+  url:   /enter_problem
+  param: { module: home, action: problem }
