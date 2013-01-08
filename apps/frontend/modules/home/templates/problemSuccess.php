@@ -2,16 +2,21 @@
 
 <body>
 
-<div class="container top-margin-50">
-  <div class="hero-unit">
-  <h3>Don't let history repeat itself</h3>
-  <form id="problem_form" action="" method="post">
-    <?= $form->render(); ?>
-    <button type="submit" class="btn">Submit</button>
-  </form>
-  </div>
+<section class="container p-container">
+<div class="row-fluid p-row-fluid">
+    <h4>Don't let history repeat itself</h4>
+    <form class="form-horizontal" id="problem_form" action="" method="post">
+      <div class="control-group">
+      <?= $form['title']->renderLabel(NULL, array('class' => 'p-title-label')); ?>
+      <?= $form['title']->render(array('class' => 'p-title')); ?>
+      <?= $form['description']->renderRow(array('class' => 'p-description')); ?>
+      </div>
+      <div class="control-group">
+      <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
 </div>
-
+</section>
 
 </body>
 

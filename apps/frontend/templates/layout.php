@@ -23,12 +23,16 @@
               <li class="active"><a href="<?= url_for("@homepage") ?>">Home</a></li>
               <li><a href="<?= url_for("@enter_problem") ?>">Enter a problem</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
-    </div><!--container-->
+    </div>
 
     <?php echo $sf_content ?>
 
+    <div class="navbar-inverse navbar-fixed-bottom">
+      <div class="navbar-inner">
+      </div>
+    </div>
   </body>
 </html>

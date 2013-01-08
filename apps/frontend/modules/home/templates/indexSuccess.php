@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
 <body>
 
-<div class="container top-margin-50">
+<section class="container p-container">
 
-    <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h2>Fix Feed</h2>
-      </div>
+    <div class="row-fluid p-row-fluid" style="width: 920px">
+      <h2 style="float: right; padding-right: 20px;">Fix Feed</h2>
 
-      <div class="display-feed">
+      <div class="display-feed" style="margin-top: 20px">
 
         <? foreach($problems as $problem) : ?>
 
           <!-- display problem -->
-          <div class="p-id-title">
-            <span class="p-id">
-            <? echo $problem->getId(); ?>
-            </span>
-            <span class="p-title">
-            <? echo $problem->getTitle(); ?>
-            </span>
+          <div style="width: 800px;">
+            <h1 style="display: inline; font-family: 'Strait' !important;">"<?= $problem->getTitle(); ?>"</h1><p style="display: inline;">  [<a href="/index.php?id=<?= $problem->getId()?>">delete</a>]</p>
+          </div>
+          <div style="margin-left: 30px;">
+            <h3><?= $problem->getDescription(); ?><h3>
           </div>
 
-          <div class="p-descr">
-
-            <span class="p-descr">
-            <? echo $problem->getDescription(); ?>
-            </span>
-
           <!-- display solution -->
-
+          <? $count = 1; ?>
           <? foreach ($solutions as $solution) : ?>
             
             <? if ($problem->getId() == $solution->getProblemId()) : ?>
 
-              <div class="<? echo $solution->getInstructionTypeId(); ?>">
+              <div style="margin-left: 30px;">
 
-                <? echo $solution->getInstruction(); ?>
+                <p><?= $count . ".) " . $solution->getInstruction(); ?></p>
+                <? $count++ ?>
 
               </div>
 
@@ -46,12 +37,10 @@
 
           <? endforeach; ?>
 
-        </div>
         <? endforeach; ?>
 
-      </div>
-</div>
-
+    </div>
+</section>
 </body>
 
 </html>

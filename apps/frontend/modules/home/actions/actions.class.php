@@ -19,6 +19,16 @@ class homeActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
 
+    if($request->getParameter('id')) {
+
+      $id = $request->getParameter('id');
+
+      $problem = ProblemPeer::retrieveByPK($id);
+
+      $problem->setIsActive(0);
+      $problem->save();
+    }
+
     $this->problems = ProblemPeer::getActiveProblems();
 
     $this->solutions = SolutionPeer::getAllSolutions();

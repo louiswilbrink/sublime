@@ -14,18 +14,19 @@ class ProblemForm extends BaseProblemForm
 
     // Widgets
     $this->setWidgets(
-                array(
-                     'title'       => new sfWidgetFormInputText(),
-                     'description' => new sfWidgetFormTextarea(),
-                     )
+           array(
+                'title'       => new sfWidgetFormInputText(),
+                'description' => new sfWidgetFormTextarea(),
+                )
            );
 
     // Validators
-    $this->setValidators(array(
-                              'title'       => new sfValidatorString(array('max_length' => 255, 'required' => true)),
-                              'description' => new sfValidatorString(array('max_length' => 255, 'required' => true)),
-                              )
-                        );
+    $this->setValidators(
+           array(
+                'title'       => new sfValidatorString(array('max_length' => 255, 'required' => true)),
+                'description' => new sfValidatorString(array('max_length' => 255, 'required' => true)),
+                )
+           );
 
   }
 }

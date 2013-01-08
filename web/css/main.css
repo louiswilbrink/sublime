@@ -1,1 +1,35 @@
-.top-margin-50 { margin-top: 50px }
+.p-container {
+  width: 940px;
+  margin-top: 41px;
+  margin-bottom: 41px;
+  background-color: #E7E7E7;
+} 
+
+.p-row-fluid {
+  padding-left: 20px;
+}
+
+.bborder {
+  border-style: solid;
+  border-width: 1px;
+  border-color: blue;
+}
+
+.rborder {
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+}
+
+.p-navbar-bottom {
+  height: 41px;
+}
+
+.p-title {
+  width: 886px;
+}
+
+.p-description {
+  width: 886px;
+}
+

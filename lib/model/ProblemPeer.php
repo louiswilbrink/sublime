@@ -28,5 +28,15 @@ class ProblemPeer extends BaseProblemPeer
 
     return $problems;
 
-    }
+  }
+
+  public static function deleteProblem($id) {
+
+    ProblemQuery::create()
+                ->filterById($id)
+                ->delete();
+
+    return 0;
+    
+  }
 }
