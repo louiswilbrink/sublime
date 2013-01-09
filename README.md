@@ -5,7 +5,9 @@ personal fix feed.
 
 Learned:
 
-- Deploying a symfony project (v.1.4)
+- Symfony
+    - Deploy a project (v.1.4)
+    - Utilize layout/decorator (navigation bar)
 - Git version control
 - Google Web Font integration
 - mysql:
