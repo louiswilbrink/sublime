@@ -80,12 +80,18 @@ class homeActions extends sfActions
   {
     $instruction = $request->getParameter('instruction');
     $step        = $request->getParameter('step');
+    $code        = $request->getParameter('code');
 
     $solution = new Solution();
 
     $solution->setInstruction($instruction);
     $solution->setStep($step);
     $solution->setProblemId($problemId);
+    
+    if($code) {
+      $solution->setInstructionTypeId(InstructionType::CODE);
+    }
+
     $solution->save();
   }
 }

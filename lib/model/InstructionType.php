@@ -19,4 +19,6 @@
  */
 class InstructionType extends BaseInstructionType
 {
+
+  const CODE = 20;
 }

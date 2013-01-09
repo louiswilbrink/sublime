@@ -14,7 +14,7 @@
 
           <!-- display problem -->
           <div style="width: 800px;">
-            <h1 style="display: inline; font-family: 'Strait' !important;">"<?= $problem->getTitle(); ?>"</h1><p style="display: inline;">  [<a href="/index.php?id=<?= $problem->getId()?>">delete</a>]</p>
+            <span style="display: inline-block; max-width: 700px"><h1 style="font-family: 'Strait' !important;">"<?= $problem->getTitle(); ?>"</h1></span><span style="margin-left: 10px; display: inline-block; vertical-align: top;"> [<a href="/index.php?id=<?= $problem->getId()?>">delete</a>]</span>
           </div>
           <div style="margin-left: 30px;">
             <h3><?= $problem->getDescription(); ?><h3>
@@ -28,7 +28,17 @@
 
               <div style="margin-left: 30px;">
 
-                <p><?= $count . ".) " . $solution->getInstruction(); ?></p>
+                <? $solutionStr = $count . ".) "; ?>
+
+                <? if ($solution->getInstructionTypeId() == InstructionType::CODE) : ?>
+                 
+                   <p><?= $solutionStr ?><code><?= $solution->getInstruction(); ?></code></p>
+                
+                <? else : ?>
+
+                  <p><?= $solutionStr . $solution->getInstruction(); ?></p>
+
+                <? endif ?>
                 <? $count++ ?>
 
               </div>

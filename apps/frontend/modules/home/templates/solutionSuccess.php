@@ -13,15 +13,29 @@
     <?= $form['instruction']->renderRow(array('class' => 'p-description')); ?>
     </div>
     <div class="control-group">
+    <?= $form['code']->render(); ?>
+    </div>
+    <div class="control-group">
     <button type="submit" class="btn">Submit</button>
     </div>
   </form>
+
   <h2>Instructions so far</h2>
-  <? $step = 1; ?>
+  <? $count = 1; ?>
   <? foreach($solutions as $solution) : ?>
 
-     <p><?= "$step.) " . $solution->getInstruction() ?></p>
-     <? $step++ ?>
+    <? $solutionStr = $count . ".) "; ?>
+
+    <? if ($solution->getInstructionTypeId() == InstructionType::CODE) : ?>
+     
+       <p><?= $solutionStr ?><code><?= $solution->getInstruction(); ?></code></p>
+    
+    <? else : ?>
+
+      <p><?= $solutionStr . $solution->getInstruction(); ?></p>
+
+    <? endif ?>
+    <? $count++ ?>
 
   <? endforeach; ?>
 

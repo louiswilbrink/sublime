@@ -24,6 +24,7 @@ class ProblemPeer extends BaseProblemPeer
 
     $problems = ProblemQuery::create()
               ->filterByIsActive(1)
+              ->orderById('desc')
               ->find();
 
     return $problems;
