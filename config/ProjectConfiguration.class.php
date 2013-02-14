@@ -8,5 +8,7 @@ class ProjectConfiguration extends sfProjectConfiguration
   public function setup()
   {
     $this->enablePlugins('sfPropelORMPlugin');
+
+    $this->setWebDir($this->getRootDir().'/sublime');
   }
 }

@@ -28,11 +28,12 @@
 
               <div style="margin-left: 30px;">
 
-                <? $solutionStr = $count . ".) "; ?>
+                <p><? $solutionStr = $count . ".) "; ?></p>
 
+                <!-- Display in code tags -->
                 <? if ($solution->getInstructionTypeId() == InstructionType::CODE) : ?>
                  
-                   <p><?= $solutionStr ?><code><?= $solution->getInstruction(); ?></code></p>
+                   <pre style="width: 800px"><?= $solutionStr ?><code><?= $solution->getInstruction(); ?></code></pre>
                 
                 <? else : ?>
 
